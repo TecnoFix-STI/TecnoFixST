@@ -39,15 +39,12 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.4);
         }
-        header span {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-        }
-        header img {
+        .logo {
+            position: absolute;
+            top: 15px;
+            left: 15px;
             height: 50px;
-            margin-right: 15px;
+            z-index: 2;
         }
         nav {
             background: #03a9f4;
@@ -136,10 +133,8 @@
 </head>
 <body>
     <header>
-        <span>
-            <img src="logo-tecnofix-blanco.png" alt="TecnoFix Logo">
-            TecnoFix - Reparación y Servicios
-        </span>
+        <img src="logo-tecnofix-blanco.png" alt="TecnoFix Logo" class="logo">
+        <span>TecnoFix - Reparación y Servicios</span>
     </header>
     
     <nav>
