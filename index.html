@@ -1,68 +1,256 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TecnoFix - Soluciones Tecnológicas</title>
+    <title>2.G Centre de Formation Otxarkoaga</title>
     <style>
+        /* Styles généraux */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             color: white;
-            padding: 10px 0;
-            text-align: center;
+            overflow-x: hidden;
         }
-        header h1 {
+
+        /* En-tête avec image de fond */
+        header {
+            background: url('Fondo de aniversario.png') no-repeat center center;
+            background-size: cover;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+            text-align: center;
+            width: 100%;
+            position: relative;
+            border-bottom: 3px solid cyan;
+        }
+
+        /* Effet de fond sombre pour améliorer la lisibilité du texte */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        header span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Menu de navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid cyan;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
             margin: 0;
         }
-        section {
-            padding: 20px;
-            text-align: center;
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
         }
-        .contact-info {
-            margin-top: 20px;
+
+        nav ul li a {
+            color: cyan;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: 0.3s;
         }
-        .contact-info p {
-            font-size: 18px;
-        }
-        footer {
-            background-color: #2c3e50;
+
+        nav ul li a:hover {
             color: white;
+            text-shadow: 0px 0px 10px cyan;
+        }
+
+        /* Sections */
+        section {
+            display: none;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid cyan;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px cyan;
+        }
+
+        section h2 {
+            color: cyan;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        }
+
+        /* "Qui sommes-nous" visible par défaut */
+        #quienes-somos {
+            display: block;
+        }
+
+        /* Bouton */
+        a button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: cyan;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        a button:hover {
+            background-color: white;
+            color: black;
+            box-shadow: 0px 0px 10px cyan;
+        }
+
+        /* Pied de page */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            border-top: 2px solid cyan;
         }
     </style>
+    <script>
+        function mostrarSeccion(id) {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+
+        window.onload = function() {
+            mostrarSeccion('quienes-somos');
+        };
+    </script>
 </head>
 <body>
-
     <header>
-        <h1>TecnoFix</h1>
-        <p>Soluciones Tecnológicas y Reparación de Dispositivos</p>
+        <span>2.G Centre de Formation Otxarkoaga</span>
     </header>
+    
+    <nav>
+        <ul>
+            <li onclick="mostrarSeccion('uso-ordenador')"><a href="#">Utilisation de l'ordinateur</a></li>
+            <li onclick="mostrarSeccion('documento-instalacion')"><a href="#">Document d'installation</a></li>
+            <li onclick="mostrarSeccion('manual-clonacion')"><a href="#">Manuel de clonage</a></li>
+            <li onclick="mostrarSeccion('quienes-somos')"><a href="#">Qui sommes-nous</a></li>
+        </ul>
+    </nav>
+<section id="uso-ordenador">
+   <h2>Utilisation de l'ordinateur</h2>
+<p>Pour tirer le meilleur parti de votre ordinateur portable, il est important de connaître son fonctionnement de base. Voici quelques conseils essentiels :</p>
 
-    <section>
-        <h2>Bienvenidos a TecnoFix</h2>
-        <p>En TecnoFix ofrecemos servicios de reparación y mantenimiento de dispositivos electrónicos, con la mejor calidad y atención.</p>
+<h3>Allumer et éteindre l'ordinateur</h3>
+<ul>
+    <li>Appuyez sur le bouton d'alimentation et attendez que le système d'exploitation démarre.</li>
+    <li>Pour l'éteindre correctement, cliquez sur "Démarrer" > "Éteindre".</li>
+    <li>Évitez de l'éteindre en maintenant le bouton d'alimentation enfoncé, car cela peut endommager le système.</li>
+</ul>
 
-        <div class="contact-info">
-            <h3>Contáctanos</h3>
-            <p><strong>Teléfono:</strong> +34 123 456 789</p>
-            <p><strong>Correo:</strong> contacto@tecnoFix.com</p>
-        </div>
-    </section>
+<h3>Connectivité</h3>
+<ul>
+    <li>Pour vous connecter à un réseau WiFi, cliquez sur l'icône réseau dans la barre des tâches et sélectionnez votre connexion.</li>
+    <li>Si vous utilisez un câble réseau (Ethernet), branchez-le sur le port correspondant pour obtenir une connexion stable.</li>
+</ul>
+
+<h3>Entretien de l'ordinateur portable</h3>
+<ul>
+    <li>Évitez de manger ou de boire près de l'ordinateur pour prévenir les dommages.</li>
+    <li>Nettoyez l'écran avec un chiffon en microfibre pour éviter les rayures.</li>
+    <li>Ne bloquez pas les sorties de ventilation pour éviter la surchauffe.</li>
+</ul>
+
+<h3>Ouvrir le manuel complet</h3>
+<p>Si vous avez besoin d'informations plus détaillées sur l'utilisation de l'ordinateur, consultez le manuel PDF suivant :</p>
+<a href="Uso%20del%20Ordenador.pdf" target="_blank">
+<button>Ouvrir le Manuel</button>
+</a>
+</section>
+
+<section id="documento-instalacion">
+   <h2>Document d'installation</h2>
+<p>Dans cette section, vous trouverez un document expliquant le processus de téléchargement et d'installation de Windows 7 Pro. Si vous devez réinstaller le système d'exploitation, suivez les étapes détaillées dans le document afin de réaliser l'installation correctement.</p>
+
+<h3>Étapes de base pour l'installation :</h3>
+<ul>
+    <li>Télécharger l'image ISO de Windows 7 Pro.</li>
+    <li>Créer un support d'installation avec une clé USB ou un DVD.</li>
+    <li>Configurer le BIOS pour démarrer à partir du support créé.</li>
+    <li>Suivre les instructions du document pour compléter l'installation.</li>
+</ul>
+
+<p>Pour voir le processus complet, accédez au document explicatif :</p>
+<a href="Documento%20de%20Instalacion.pdf" target="_blank">
+<button>Ouvrir le Manuel</button>
+</a>
+</section>
+
+  <!-- Sección de Manual de Clonacion -->
+     <section id="manual-clonacion">
+        <h2>Manuel de clonage</h2>
+        <p>Le clonage de disques est un processus permettant de créer une copie exacte d'un disque dur ou d'une partition, incluant le système d'exploitation, les programmes installés et les fichiers de l'utilisateur. Cette méthode est très utile lorsqu'il est nécessaire de répliquer une configuration sur plusieurs ordinateurs sans avoir à installer le système et les programmes un par un.</p>
+
+        <h3>Comment fonctionne le clonage ?</h3>
+        <p>Le processus de clonage consiste à copier toute la structure des données du disque d'origine vers un autre disque ou une image, de manière à ce que le système puisse démarrer et fonctionner exactement comme l'original. Pour réaliser cette tâche, on utilise des outils spécialisés tels que Clonezilla, Macrium Reflect ou Acronis True Image.</p>
+
+        <h3>Étapes pour cloner un disque</h3>
+        <ol>
+            <li><strong>Préparer les disques :</strong> Assurez-vous que le disque de destination dispose de suffisamment d'espace libre pour contenir la copie du disque original.</li>
+            <li><strong>Choisir le logiciel de clonage :</strong> Il est recommandé d'utiliser Clonezilla pour des solutions gratuites ou Macrium Reflect si vous préférez une interface plus conviviale.</li>
+            <li><strong>Créer un support de démarrage :</strong> Téléchargez l'outil de clonage et gravez-le sur une clé USB ou un CD/DVD afin de démarrer le système à partir de celui-ci.</li>
+            <li><strong>Démarrer depuis la clé USB ou le CD/DVD :</strong> Accédez au BIOS ou à l’UEFI et modifiez l'ordre de démarrage pour lancer le système à partir du support créé.</li>
+            <li><strong>Sélectionner l’option de clonage :</strong> Dans le logiciel de clonage, choisissez l'option de cloner disque à disque ou de créer une image du système.</li>
+            <li><strong>Lancer le processus :</strong> Confirmez les options sélectionnées et laissez le programme copier toutes les données. Le temps nécessaire dépendra de la taille du disque.</li>
+            <li><strong>Vérifier le clonage :</strong> Une fois terminé, déconnectez le disque d'origine et testez si le système démarre correctement sur le nouveau disque.</li>
+        </ol>
+
+        <h3>Avantages du clonage</h3>
+        <ul>
+            <li>Gain de temps lors d'installations répétitives.</li>
+            <li>Création de sauvegardes complètes du système.</li>
+            <li>Facilité de restauration du système d'exploitation en cas de panne.</li>
+        </ul>
+
+        <p>En suivant ces étapes, vous pourrez cloner n'importe quel système de manière simple et rapide. Si vous avez des questions, consultez la vidéo d'installation ou contactez l'équipe technique.</p>
+
+        <!-- Bouton pour ouvrir le manuel en PDF -->
+         <a href="Manual%20de%20Clonacion.pdf" target="_blank">
+         <button>Ouvrir le Manuel</button>
+</a>
+</section>
+    
+    <!-- Section Qui sommes-nous (visible par défaut) -->
+<section id="quienes-somos">
+    <h2>Qui sommes-nous</h2>
+    <p>Nous sommes un groupe d'étudiants en informatique du Centre de Formation Otxarkoaga, passionnés par la technologie et désireux d'appliquer nos connaissances à des projets réels. Au cours de notre formation, nous avons appris sur le matériel, les logiciels et les systèmes d'exploitation, et ce projet nous a permis de mettre en pratique tout ce que nous avons appris dans un environnement réel. Notre objectif n'était pas seulement d'améliorer nos compétences techniques, mais aussi d'apporter quelque chose de précieux à la communauté.</p>
+    <p>Au cours du dernier mois, nous avons travaillé intensément sur la préparation et la configuration de ces ordinateurs afin qu'ils puissent être utilisés de la meilleure manière possible. De la sélection des équipements, en passant par l'installation du système d'exploitation et des logiciels nécessaires, jusqu'à la vérification de leur bon fonctionnement, chaque étape a été réalisée avec dévouement et effort. Nous savons à quel point il est important d'avoir un ordinateur qui fonctionne bien, c'est pourquoi nous avons accordé une attention particulière à chaque détail.</p>
+    <p>En plus de l'aspect technique, nous avons travaillé sur la documentation nécessaire pour rendre l'utilisation des ordinateurs aussi simple que possible. Nous avons créé un manuel d'utilisation détaillé, expliquant comment tirer le meilleur parti de chaque ordinateur et comment résoudre d'éventuels problèmes. Nous avons également préparé une vidéo d'installation qui servira de guide en cas de réinstallation du système. Nous voulons nous assurer que toute personne, quel que soit son niveau d'expérience, puisse utiliser ces ordinateurs sans difficulté.</p>
+    <p>Ce projet nous a permis non seulement de développer des compétences techniques, mais aussi d'apprendre à travailler en équipe et à gérer un projet de bout en bout. Chacun de nous a eu un rôle important au sein du groupe, et grâce à la collaboration et aux efforts conjoints, nous avons réussi à mener ce travail à bien. Ce fut une expérience enrichissante, et nous sommes fiers d'avoir participé à un projet qui sera utile à d'autres personnes.</p>
+    <p>Nous espérons sincèrement que vous apprécierez ces ordinateurs autant que nous avons pris plaisir à les préparer pour vous. Notre souhait est qu'ils vous soient utiles pour vos études, votre travail ou votre divertissement, et qu'ils vous aident à atteindre vos objectifs. Si vous avez besoin d'aide ou si vous avez des questions, nous serons ravis de vous assister. Merci de faire confiance à notre travail et nous espérons que vous en tirerez le meilleur parti !</p>
+</section>
 
     <footer>
-        <p>&copy; 2025 TecnoFix. Todos los derechos reservados.</p>
+        &copy; 2024 Centre de Formation Otxarkoaga
     </footer>
-
 </body>
 </html>
